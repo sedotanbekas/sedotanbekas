@@ -4,7 +4,7 @@
 -->
 
 <p align="center">
-  <a href="../README.md"><img src="../assets/lang/en.svg" height="25" alt="English"></a>
+  <a href="https://github.com/sedotanbekas"><img src="../assets/lang/en.svg" height="25" alt="English"></a>
   <a href="README.zh.md"><img src="../assets/lang/zh.svg" height="25" alt="简体中文"></a>
   <a href="README.hi.md"><img src="../assets/lang/hi.svg" height="25" alt="हिन्दी"></a>
   <a href="README.es.md"><img src="../assets/lang/es-on.svg" height="25" alt="Español"></a>

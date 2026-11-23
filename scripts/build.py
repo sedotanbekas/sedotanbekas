@@ -912,8 +912,9 @@ def readme(L):
     t = T[L]
     root = L == "en"
     pre = "" if root else "../"
-    link = (lambda o: ("README.md" if o == "en" else f"i18n/README.{o}.md")) if root else \
-           (lambda o: ("../README.md" if o == "en" else f"README.{o}.md"))
+    home = f"https://github.com/{USER}"  # English lives on the profile page itself
+    link = (lambda o: (home if o == "en" else f"i18n/README.{o}.md")) if root else \
+           (lambda o: (home if o == "en" else f"README.{o}.md"))
     pills = "\n".join(f'  <a href="{link(o)}"><img src="{pre}assets/lang/{o}{"-on" if o == L else ""}.svg" height="25" alt="{t_native(o)}"></a>'
                       for o in LANGS)
     img = lambda f, alt, w="100%": f'<img src="{pre}assets/{L}/{f}" width="{w}" alt="{esc(alt)}">'  # noqa: E731
