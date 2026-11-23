@@ -60,6 +60,8 @@ FEATURED = [  # (repo, short code, link) — descriptions are in i18n.py ("s_des
     ("sedotanbekas/umkm-ez-tax", "BANGKIT", "https://github.com/sedotanbekas/umkm-ez-tax"),
     ("sedotanbekas/sentiment-analysis-web", "NLP", "https://github.com/sedotanbekas/sentiment-analysis-web"),
 ]
+PORTFOLIO_URL = "https://rna-r4swy4.38.47.176.211.sslip.io/"  # change this one line if the portfolio moves to its own domain
+PORTFOLIO_STATS = [8000, "18→98", "70", "3"]  # figures from the portfolio's "By the numbers"; labels in i18n.py ("att_stats")
 EXTRA_LANG_REPOS = ["medialabindonesia/lims-medialab"]  # counted in the periodic table too
 EXCLUDE_LANGS = {"HTML", "TeX", "Jupyter Notebook", "Standard ML", "Makefile"}
 MERGE_LANGS = {"SCSS": "CSS", "Less": "CSS", "Sass": "CSS"}
@@ -883,6 +885,40 @@ def build_sample(k, full, code, desc, info, L):
     return c.render(f"{name}: {desc}")
 
 
+# ─────────────────────────────── ATTACHMENT (PORTFOLIO) ───────────────
+def build_portfolio(L):
+    t = T[L]
+    c = Canvas(1000, 238, L)
+    W = c.W
+    c.paper()
+    # paperclip holding the attachment to the report
+    c.add(c.mirrored(f'<path d="M44 70V18a9 9 0 0 1 18 0v46a14 14 0 0 1-28 0V26" fill="none" stroke="{MUTE}" stroke-width="3" '
+                     f'stroke-linecap="round"/><path d="M44 70V18a9 9 0 0 1 18 0v46" fill="none" stroke="{PAPER}" stroke-width="1" '
+                     f'stroke-linecap="round" opacity=".6"/>'))
+    c.text(82, 42, t["att_tag"], c.fit(t["att_tag"], 10.5, 560, "m b", 2), "m b", RED, ls=2)
+    title = t["att_title"] + " — "
+    tsize = min(34, round(34 * 600 / max(c.measure(title, 34, "s") + c.measure(t["att_sub"], 34, "s i"), 1), 1))
+    c.rich(80, 86, [(title, tsize, "s", INK), (t["att_sub"], tsize, "s i", RED)])
+    c.text(82, 110, t["att_note"], c.fit(t["att_note"], 11.5, 560, "m"), "m", MUTE)
+    cta = t["att_cta"]
+    csz = c.fit(cta, 12.5, 250, "m b", 1)
+    cw = c.measure(cta, csz, "m b", 1) + 40
+    c.rect(W - 36 - cw, 52, cw, 42, rx=21, fill=RED, stroke=INK, stroke_width=1.6)
+    c.text(W - 36 - cw / 2, 78, cta, csz, "m b", PAPER, "middle", ls=1)
+    c.line(36, 134, W - 36, 134, stroke=LINE, stroke_width=1, stroke_dasharray="3 3")
+    colw = (W - 72) / len(PORTFOLIO_STATS)
+    for k, (val, lab) in enumerate(zip(PORTFOLIO_STATS, t["att_stats"])):
+        x = 36 + k * colw
+        if k:
+            c.line(x, 148, x, 222, stroke=LINE, stroke_width=.8)
+        v = grouped(L, val) + "+" if isinstance(val, int) else val
+        c.text(x + 20, 184, v, 40, "s", RED if k == 0 else INK)
+        for j, ln in enumerate(wrap(c, lab, colw - 36, 11)):
+            c.text(x + 20, 204 + j * 15, ln, c.fit(ln, 11, colw - 30), "m", MUTE)
+    c.border()
+    return c.render(f"{t['att_title']} — {t['att_sub']}")
+
+
 # ─────────────────────────────── FOOTER & PILLS ───────────────────────
 def build_footer(d, a, now, L):
     c = Canvas(1000, 96, L)
@@ -934,6 +970,10 @@ def readme(L):
 ### `{t['md_abs_h']}`
 
 {t['md_abs']}
+
+<p align="center">
+  <a href="{PORTFOLIO_URL}">{img("portfolio.svg", t['att_title'] + " — " + t['att_sub'])}</a>
+</p>
 
 <p align="center">
   {img("coa.svg", "Laporan Hasil Uji — " + t['coa_sub'])}
@@ -989,7 +1029,7 @@ def main():
     for L in langs:
         out = {"header.svg": build_header(d, a, now, L), "coa.svg": build_coa(d, a, now, L),
                "elements.svg": build_elements(d, a, now, L), "chromatogram.svg": build_chroma(d, a, now, L),
-               "footer.svg": build_footer(d, a, now, L)}
+               "footer.svg": build_footer(d, a, now, L), "portfolio.svg": build_portfolio(L)}
         for k, (full, code, _) in enumerate(FEATURED):
             out[f"samples/{full.split('/')[1]}.svg"] = build_sample(k, full, code, T[L]["s_desc"][k], d.get("featured", {}).get(full, {}), L)
         (ASSETS / L / "samples").mkdir(parents=True, exist_ok=True)

@@ -32,6 +32,10 @@ para que los bugs me encuentren a mí antes que a nadie. Graduado en Ingeniería
 y exalumno de Bangkit Academy 2024 (Desarrollo móvil).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/es/portfolio.svg" width="100%" alt="El expediente completo — portafolio"></a>
+</p>
+
+<p align="center">
   <img src="../assets/es/coa.svg" width="100%" alt="Laporan Hasil Uji — Certificado de análisis — muestra: un (1) desarrollador">
 </p>
 

@@ -32,6 +32,10 @@ supaya bug-nya ketemu aku duluan sebelum ketemu orang lain. Lulusan Teknik Infor
 dan alumni Bangkit Academy 2024 (Mobile Development).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/id/portfolio.svg" width="100%" alt="Berkas kasus lengkap — portofolio"></a>
+</p>
+
+<p align="center">
   <img src="../assets/id/coa.svg" width="100%" alt="Laporan Hasil Uji — Sertifikat Analisis — spesimen: satu (1) developer">
 </p>
 

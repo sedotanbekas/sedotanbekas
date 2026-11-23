@@ -32,6 +32,10 @@
 स्नातक और Bangkit Academy 2024 (मोबाइल डेवलपमेंट) का पूर्व छात्र।
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/hi/portfolio.svg" width="100%" alt="पूरी केस फ़ाइल — पोर्टफ़ोलियो"></a>
+</p>
+
+<p align="center">
   <img src="../assets/hi/coa.svg" width="100%" alt="Laporan Hasil Uji — विश्लेषण प्रमाणपत्र — नमूना: एक (1) डेवलपर">
 </p>
 

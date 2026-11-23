@@ -29,6 +29,10 @@
 我为 **PT Medialab Indonesia** 的检测实验室开发内部软件，其中最核心的是 **LIMS**（Next.js · Prisma · MariaDB，通过 GitHub Actions、PM2 和 Nginx 部署到 Ubuntu）。上线之前，我会亲自对它做渗透测试，让漏洞先撞上我，而不是别人。毕业于 **Politeknik Negeri Jakarta** 信息工程专业，Bangkit Academy 2024 学员（移动开发方向）。
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/zh/portfolio.svg" width="100%" alt="完整案例档案 — 作品集"></a>
+</p>
+
+<p align="center">
   <img src="../assets/zh/coa.svg" width="100%" alt="Laporan Hasil Uji — 分析证书 — 样品：开发者一（1）名">
 </p>
 

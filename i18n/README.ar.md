@@ -34,6 +34,10 @@
 ومن خرّيجي Bangkit Academy 2024 (تطوير تطبيقات الجوال).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/ar/portfolio.svg" width="100%" alt="الملف الكامل — معرض الأعمال"></a>
+</p>
+
+<p align="center">
   <img src="../assets/ar/coa.svg" width="100%" alt="Laporan Hasil Uji — شهادة تحليل — العيّنة: مطوّر واحد (1)">
 </p>
 

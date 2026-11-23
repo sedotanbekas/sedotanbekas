@@ -32,6 +32,10 @@
 «Информатика», выпускник Bangkit Academy 2024 (мобильная разработка).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/ru/portfolio.svg" width="100%" alt="Полное досье — портфолио"></a>
+</p>
+
+<p align="center">
   <img src="../assets/ru/coa.svg" width="100%" alt="Laporan Hasil Uji — Сертификат анализа — образец: один (1) разработчик">
 </p>
 

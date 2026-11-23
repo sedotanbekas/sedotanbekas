@@ -32,6 +32,10 @@ so the bugs meet me before they meet anyone else. Informatics Engineering gradua
 and a Bangkit Academy 2024 alumnus (Mobile Development).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="assets/en/portfolio.svg" width="100%" alt="The full case file — portfolio"></a>
+</p>
+
+<p align="center">
   <img src="assets/en/coa.svg" width="100%" alt="Laporan Hasil Uji — Certificate of Analysis — specimen: one (1) developer">
 </p>
 

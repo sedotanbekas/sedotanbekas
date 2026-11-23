@@ -32,6 +32,10 @@ para que os bugs me encontrem antes de encontrar qualquer outra pessoa. Formado 
 **Politeknik Negeri Jakarta** e ex-aluno da Bangkit Academy 2024 (Desenvolvimento mobile).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/pt/portfolio.svg" width="100%" alt="O dossiê completo — portfólio"></a>
+</p>
+
+<p align="center">
   <img src="../assets/pt/coa.svg" width="100%" alt="Laporan Hasil Uji — Certificado de análise — amostra: um (1) desenvolvedor">
 </p>
 

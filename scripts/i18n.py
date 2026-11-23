@@ -522,3 +522,50 @@ def all_text(lang):
     walk(T[lang])
     walk(coa_strings(lang))
     return "".join(out)
+
+
+# ── Attachment card: the portfolio website ("Lampiran A") ─────────────────
+# att_stats are the labels under the numbers in build.py's PORTFOLIO_STATS (same order).
+ATT = {
+    "en": {"att_tag": "LAMPIRAN A · ATTACHMENT A", "att_title": "The full case file", "att_sub": "portfolio",
+           "att_note": "LIMS case study · numbers · experience · credentials", "att_cta": "OPEN PORTFOLIO ↗",
+           "att_stats": ["unit tests gate every release", "screens, grown from 18", "unwritten lab rules turned into logic",
+                         "days from feedback to release"]},
+    "id": {"att_tag": "LAMPIRAN A", "att_title": "Berkas kasus lengkap", "att_sub": "portofolio",
+           "att_note": "studi kasus LIMS · angka · pengalaman · kredensial", "att_cta": "BUKA PORTOFOLIO ↗",
+           "att_stats": ["unit test menjaga tiap rilis", "layar, tumbuh dari 18", "aturan lab tak tertulis jadi logika",
+                         "hari dari masukan sampai rilis"]},
+    "zh": {"att_tag": "LAMPIRAN A · 附件 A", "att_title": "完整案例档案", "att_sub": "作品集",
+           "att_note": "LIMS 案例 · 数据 · 经历 · 资历", "att_cta": "打开作品集 ↗",
+           "att_stats": ["个单元测试为每次发布把关", "个页面，由 18 个扩展而来", "条不成文的实验室规则写进系统", "天：从反馈到上线"]},
+    "hi": {"att_tag": "LAMPIRAN A · संलग्नक A", "att_title": "पूरी केस फ़ाइल", "att_sub": "पोर्टफ़ोलियो",
+           "att_note": "LIMS केस स्टडी · आँकड़े · अनुभव · प्रमाणपत्र", "att_cta": "पोर्टफ़ोलियो खोलें ↗",
+           "att_stats": ["यूनिट टेस्ट हर रिलीज़ की जाँच करते हैं", "स्क्रीन, 18 से बढ़कर", "अलिखित लैब नियम सिस्टम लॉजिक बने",
+                         "दिन: फ़ीडबैक से रिलीज़ तक"]},
+    "es": {"att_tag": "LAMPIRAN A · ANEXO A", "att_title": "El expediente completo", "att_sub": "portafolio",
+           "att_note": "caso LIMS · cifras · experiencia · credenciales", "att_cta": "VER PORTAFOLIO ↗",
+           "att_stats": ["tests unitarios protegen cada versión", "pantallas, desde 18", "reglas no escritas del laboratorio, ahora lógica",
+                         "días de la retroalimentación al despliegue"]},
+    "ar": {"att_tag": "LAMPIRAN A · المرفق A", "att_title": "الملف الكامل", "att_sub": "معرض الأعمال",
+           "att_note": "دراسة حالة LIMS · أرقام · خبرة · مؤهلات", "att_cta": "افتح معرض الأعمال ↗",
+           "att_stats": ["اختبار وحدة يحرس كل إصدار", "شاشة، بعد أن كانت 18", "قاعدة مخبرية غير مكتوبة صارت منطقًا",
+                         "أيام من الملاحظات إلى الإصدار"]},
+    "fr": {"att_tag": "LAMPIRAN A · ANNEXE A", "att_title": "Le dossier complet", "att_sub": "portfolio",
+           "att_note": "étude de cas LIMS · chiffres · parcours · diplômes", "att_cta": "OUVRIR LE PORTFOLIO ↗",
+           "att_stats": ["tests unitaires avant chaque mise en prod", "écrans, partis de 18", "règles non écrites du labo devenues logique",
+                         "jours entre retour et mise en prod"]},
+    "bn": {"att_tag": "LAMPIRAN A · সংযুক্তি A", "att_title": "পূর্ণ কেস ফাইল", "att_sub": "পোর্টফোলিও",
+           "att_note": "LIMS কেস স্টাডি · সংখ্যা · অভিজ্ঞতা · সনদ", "att_cta": "পোর্টফোলিও খুলুন ↗",
+           "att_stats": ["ইউনিট টেস্ট প্রতিটি রিলিজ পাহারা দেয়", "স্ক্রিন, 18 থেকে বেড়ে", "অলিখিত ল্যাব নিয়ম এখন সিস্টেম লজিক",
+                         "দিন: ফিডব্যাক থেকে রিলিজ"]},
+    "pt": {"att_tag": "LAMPIRAN A · ANEXO A", "att_title": "O dossiê completo", "att_sub": "portfólio",
+           "att_note": "estudo de caso LIMS · números · experiência · credenciais", "att_cta": "ABRIR PORTFÓLIO ↗",
+           "att_stats": ["testes unitários protegem cada versão", "telas, a partir de 18", "regras não escritas do laboratório viraram lógica",
+                         "dias do feedback ao deploy"]},
+    "ru": {"att_tag": "LAMPIRAN A · ПРИЛОЖЕНИЕ A", "att_title": "Полное досье", "att_sub": "портфолио",
+           "att_note": "кейс LIMS · цифры · опыт · квалификация", "att_cta": "ОТКРЫТЬ ПОРТФОЛИО ↗",
+           "att_stats": ["юнит-тестов перед каждым релизом", "экранов, начинали с 18", "неписаных правил лаборатории стали логикой",
+                         "дня от отзыва до релиза"]},
+}
+for _L, _v in ATT.items():
+    T[_L].update(_v)

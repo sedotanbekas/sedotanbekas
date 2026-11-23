@@ -32,6 +32,10 @@ pour que les bugs tombent sur moi avant de tomber sur quelqu’un d’autre. Dip
 **Politeknik Negeri Jakarta** et ancien de Bangkit Academy 2024 (Développement mobile).
 
 <p align="center">
+  <a href="https://rna-r4swy4.38.47.176.211.sslip.io/"><img src="../assets/fr/portfolio.svg" width="100%" alt="Le dossier complet — portfolio"></a>
+</p>
+
+<p align="center">
   <img src="../assets/fr/coa.svg" width="100%" alt="Laporan Hasil Uji — Certificat d’analyse — échantillon : un (1) développeur">
 </p>
 
