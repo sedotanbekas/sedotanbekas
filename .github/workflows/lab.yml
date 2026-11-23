@@ -1,0 +1,45 @@
+name: Re-assay specimen
+
+# Rebuilds every SVG in /assets from live GitHub data, once a day.
+on:
+  schedule:
+    - cron: "17 17 * * *" # 00:17 WIB (UTC+7)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/lab.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: re-assay
+  cancel-in-progress: true
+
+jobs:
+  assay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build SVGs
+        run: python scripts/build.py
+        env:
+          # Optional: add a read-only fine-grained PAT as the STATS_TOKEN secret for higher rate limits.
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --cached --quiet; then
+            echo "No change."
+          else
+            git commit -m "chore(lab): re-assay specimen $(TZ=Asia/Jakarta date +'%Y-%m-%d %H:%M') WIB"
+            git push
+          fi
