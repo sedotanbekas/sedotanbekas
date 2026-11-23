@@ -1,13 +1,13 @@
 name: Re-assay specimen
 
-# Rebuilds every SVG in /assets from live GitHub data, once a day.
+# Rebuilds every SVG in /assets (10 languages) and the README files from live GitHub data, once a day.
 on:
   schedule:
     - cron: "17 17 * * *" # 00:17 WIB (UTC+7)
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["scripts/**", ".github/workflows/lab.yml"]
+    paths: ["scripts/**", "assets/fonts/**", ".github/workflows/lab.yml"]
 
 permissions:
   contents: write
@@ -26,7 +26,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build SVGs
+      # Optional but recommended: per-image font subsetting + real text shaping (Arabic, Hindi, Bengali).
+      - name: Install font tooling
+        run: pip install fonttools brotli uharfbuzz
+
+      - name: Build SVGs and READMEs
         run: python scripts/build.py
         env:
           # Optional: add a read-only fine-grained PAT as the STATS_TOKEN secret for higher rate limits.
@@ -36,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets
+          git add assets README.md i18n
           if git diff --cached --quiet; then
             echo "No change."
           else
